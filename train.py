@@ -94,7 +94,7 @@ def get_args() -> argparse.Namespace:
     )
 
     # I/O
-    p.add_argument("--out",     default="VCP_IR_CBAM")
+    p.add_argument("--out",     default="VCP_IR")
     p.add_argument("--results", default="results")
 
     p.add_argument(
