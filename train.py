@@ -26,7 +26,7 @@ from torch.utils.data import DataLoader, random_split
 from torchvision.utils import make_grid, save_image
 from tqdm.auto import tqdm
 
-from vcp_ir import VCP_IR_CBAM, BlurSharpDataset, CombinedLoss, psnr, ssim_score
+from vcp_ir import VCP_IR, BlurSharpDataset, CombinedLoss, psnr, ssim_score
 
 
 # ---------------------------------------------------------------------------
@@ -141,7 +141,7 @@ def main() -> None:
     # ------------------------------------------------------------------
     # Model
     # ------------------------------------------------------------------
-    model = VCP_IR_CBAM(
+    model = VCP_IR(
         inp_channels=3,
         out_channels=3,
         dim=args.dim,
