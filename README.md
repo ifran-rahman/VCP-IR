@@ -1,6 +1,6 @@
 # VCP-IR: Visual Conditioning Prompting for All-in-One Image Restoration
 
-A Restormer-style hierarchical U-Net enhanced with **Visual Conditioning Prompts (VCP)** and **CBAM** attention. The model takes a degraded image, derives a visual embedding from it, and uses that embedding to adaptively condition each decoder stage — enabling the network to simultaneously handle multiple restoration tasks (deblurring, denoising, deraining, etc.).
+A Restormer-style hierarchical U-Net enhanced with **Visual Conditioning Prompts (VCP)** The model takes a degraded image, derives a visual embedding from it, and uses that embedding to adaptively condition each decoder stage — enabling the network to simultaneously handle multiple restoration tasks (deblurring, denoising, deraining, etc.).
 
 ---
 
@@ -10,7 +10,7 @@ A Restormer-style hierarchical U-Net enhanced with **Visual Conditioning Prompts
 vcp_ir/
 ├── vcp_ir/
 │   ├── __init__.py      # Public API
-│   ├── model.py         # VCP_IR_CBAM architecture
+│   ├── model.py         # VCP_IR architecture
 │   ├── dataset.py       # BlurSharpDataset + PSNR / SSIM metrics
 │   └── losses.py        # CharbonnierLoss, CombinedLoss
 ├── train.py             # Full training loop
@@ -120,8 +120,7 @@ Each output image is a side-by-side grid: **input | prediction | ground truth**.
 ## Architecture overview
 
 
-* **VCP block**: derives a gating vector from the flattened input image via `LazyLinear`, applies CBAM attention, and produces a spatial prompt that is concatenated into the decoder.  
-* **CBAM**: channel attention (shared MLP on avg + max pool) followed by spatial attention (conv on channel-pooled features).  
+* **VCP block**: derives a gating vector from the flattened input image via `LazyLinear`, and produces a spatial prompt that is concatenated into the decoder.  
 * **Loss**: Charbonnier pixel loss + 0.2 × Laplacian high-frequency L1 loss.
 
 ---
