@@ -124,3 +124,22 @@ Each output image is a side-by-side grid: **input | prediction | ground truth**.
 * **Loss**: Charbonnier pixel loss + 0.2 × Laplacian high-frequency L1 loss.
 
 ---
+
+## Associated paper and dataset
+
+This repository accompanies our paper in *Signal Processing: Image Communication*. If you use the code or dataset in your research, please cite the paper using the BibTeX entry below.
+
+- [Read the paper](https://doi.org/10.1016/j.image.2026.117742)
+- [Download the Avro Sky Image Restoration Dataset on Zenodo](https://zenodo.org/records/23704668)
+
+```bibtex
+@article{NIJHUM2026117742,
+  author  = {Ifran Rahman Nijhum and Md Yearat Hossain and Md Shihab Reza and Md Mahbub Hasan Rakib and Soumyabrata Dev},
+  title   = {Visual-conditioned prompting for all-in-one remote sensing image restoration},
+  journal = {Signal Processing: Image Communication},
+  year    = {2026},
+  pages   = {117742},
+  doi     = {10.1016/j.image.2026.117742},
+  url     = {https://doi.org/10.1016/j.image.2026.117742}
+}
+```
